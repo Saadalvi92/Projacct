@@ -75,7 +75,6 @@ function SignUp({navigation}) {
               <TextInput
                 placeholderTextColor="grey"
                 placeholder="userName"
-                secureTextEntry={true}
                 value={userName}
                 onChangeText={text => setUserName(text)}
                 style={styles.input}

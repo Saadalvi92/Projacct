@@ -22,31 +22,31 @@ export default function AccountSummary({navigation, route}) {
   //     id: 1,
   //     date: '28-01-2021',
   //     message: 'First Payment',
-  //     price: '$ 20000',
+  //     price: '£ 20000',
   //   },
   //   {
   //     id: 2,
   //     date: '04-02-2021',
   //     message: 'First Payment',
-  //     price: '$ 10000',
+  //     price: '£ 10000',
   //   },
   //   {
   //     id: 3,
   //     date: '19-02-2021',
   //     message: 'First Payment',
-  //     price: '$ 10000',
+  //     price: '£ 10000',
   //   },
   //   {
   //     id: 4,
   //     date: '01-03-2021',
   //     message: 'First Payment',
-  //     price: '$ 15500',
+  //     price: '£ 15500',
   //   },
   //   {
   //     id: 5,
   //     date: '09-05-2021',
   //     message: 'First Payment',
-  //     price: '$ 11110',
+  //     price: '£ 11110',
   //   },
   // ]);
   const [trans_cat, setTrans_cat] = useState(true);
@@ -57,9 +57,9 @@ export default function AccountSummary({navigation, route}) {
   const [icome, setIncome] = useState([]);
   const [expense, setExpense] = useState([]);
   const data = [...icome, ...expense];
-  console.log(data);
+  // console.log(data);
   useEffect(() => {
-    console.log(user_id);
+    // console.log(user_id);
     var config = {
       method: 'post',
       url: 'https://suretostop.com/accounting/getData/',
@@ -76,7 +76,6 @@ export default function AccountSummary({navigation, route}) {
         setTotalIncome(response.data.TotalIncome);
         setIncome(response.data.income);
         setExpense(response.data.expense);
-        console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -89,8 +88,8 @@ export default function AccountSummary({navigation, route}) {
   const AddExpense = () => {
     setClick(false);
     setTrans_cat(false);
+    console.log(trans_cat);
   };
-
   const Submit = () => {
     var data = JSON.stringify({
       user_id: user_id,
@@ -108,15 +107,16 @@ export default function AccountSummary({navigation, route}) {
     };
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
+        alert('The data is saved please reload to load the expenses');
       })
       .catch(function (error) {
         console.log(error);
+        alert('The data is not saved please check you Connection');
       });
   };
   return (
     <View>
-      {console.log(TotalExpense)}
+      {/* {console.log(TotalExpense)} */}
       {click ? (
         <Modal animationType="fade" visible={true} transparent={true}>
           <KeyboardAvoidingView
@@ -354,7 +354,7 @@ export default function AccountSummary({navigation, route}) {
             <Icon name="add-circle" size={40} color="green" />
             <View style={{marginLeft: 10}}>
               <Text style={{fontWeight: 'bold', fontSize: 16}}>Income</Text>
-              <Text style={{color: 'grey', fontSize: 12}}>${TotalIncome}</Text>
+              <Text style={{color: 'grey', fontSize: 12}}>£{TotalIncome}</Text>
             </View>
           </View>
           <View style={{flexDirection: 'row', marginTop: 10}}>
@@ -362,7 +362,7 @@ export default function AccountSummary({navigation, route}) {
             <View style={{marginLeft: 10}}>
               <Text style={{fontWeight: 'bold', fontSize: 16}}>Expenses</Text>
               <Text style={{color: 'grey', fontSize: 12}}>
-                -${TotalExpense}
+                -£{TotalExpense}
               </Text>
             </View>
           </View>
@@ -371,7 +371,7 @@ export default function AccountSummary({navigation, route}) {
             <View style={{marginLeft: 10}}>
               <Text style={{fontWeight: 'bold', fontSize: 16}}>Balance</Text>
               <Text style={{color: 'grey', fontSize: 12}}>
-                ${TotalIncome - TotalExpense}
+                £{TotalIncome - TotalExpense}
               </Text>
             </View>
           </View>

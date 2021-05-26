@@ -92,21 +92,21 @@ export default function ProjacctsScreen({navigation, route}) {
               <Icon name="add-circle" size={30} color="green" />
               <View style={{marginLeft: 10}}>
                 <Text style={{fontWeight: 'bold'}}>Income</Text>
-                <Text style={{color: 'grey', fontSize: 12}}>$10,000</Text>
+                <Text style={{color: 'grey', fontSize: 12}}>£10,000</Text>
               </View>
             </View>
             <View style={{flexDirection: 'row', marginTop: 10}}>
               <Icon name="remove-circle" size={30} color="red" />
               <View style={{marginLeft: 10}}>
                 <Text style={{fontWeight: 'bold'}}>Expenses</Text>
-                <Text style={{color: 'grey', fontSize: 12}}>-$2,500</Text>
+                <Text style={{color: 'grey', fontSize: 12}}>-£2,500</Text>
               </View>
             </View>
             <View style={{flexDirection: 'row', marginTop: 10}}>
               <Icon name="ios-logo-codepen" size={30} color="blue" />
               <View style={{marginLeft: 10}}>
                 <Text style={{fontWeight: 'bold'}}>Balance</Text>
-                <Text style={{color: 'grey', fontSize: 12}}>$7,500</Text>
+                <Text style={{color: 'grey', fontSize: 12}}>£7,500</Text>
               </View>
             </View>
           </View>
@@ -126,7 +126,7 @@ export default function ProjacctsScreen({navigation, route}) {
               <Icon name="add-circle-sharp" size={50} color="green" />
             </View>
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
+          {/* <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
             <TouchableOpacity
               onPress={() =>navigation.navigate('EditProject')}
               style={{
@@ -231,7 +231,7 @@ export default function ProjacctsScreen({navigation, route}) {
                 style={{top: 10, right: 10, position: 'absolute'}}
               />
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
       </ScrollView>
     </>

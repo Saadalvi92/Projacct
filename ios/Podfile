@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'Projacct' do
+target 'Accounting_App' do
   config = use_native_modules!
 
   use_react_native!(
@@ -12,9 +12,7 @@ target 'Projacct' do
     :hermes_enabled => false
   )
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-
-  target 'ProjacctTests' do
+  target 'Accounting_AppTests' do
     inherit! :complete
     # Pods for testing
   end

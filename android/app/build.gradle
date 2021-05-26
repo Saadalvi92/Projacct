@@ -131,13 +131,13 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.projacct"
+        applicationId "com.accounting_app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
-     signingConfigs {
+    signingConfigs {
     release {
       storeFile file('AMCRECIPIES-key.keystore')
       storePassword '123456'
@@ -169,9 +169,8 @@ android {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
-             signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
-
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
